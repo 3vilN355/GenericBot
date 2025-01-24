@@ -1,18 +1,20 @@
 # ---- STAGE 1: Build with Bun ----
-FROM oven/bun:latest as builder
+FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
 # Copy files
 COPY package.json .
-COPY bun.lockb .
+COPY bun.lock .
 COPY tsconfig.json .
 COPY src ./src
 COPY database ./database
 
+# TODO: The first install always fails due to a zlib-sync error, why?
+RUN bun install; exit 0
 RUN bun install
 
-RUN bun build
+RUN bun run build
 
 # ---- STAGE 2: Production with Node ----
 FROM node:20-alpine
@@ -29,5 +31,5 @@ COPY --from=builder /app/database ./database
 COPY .env .
 
 EXPOSE 3000
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/src/index.js"]
     
