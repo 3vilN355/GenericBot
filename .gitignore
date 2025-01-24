@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Bun cache
+.bun/
+
+# TypeScript build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Environment variables
+.env

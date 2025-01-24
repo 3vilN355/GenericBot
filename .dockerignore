@@ -1,0 +1,4 @@
+node_modules
+data/*   # if you don’t want to copy local data into container
+.git
+.vscode

@@ -1,0 +1,35 @@
+{
+    "name": "advanced-discord-bot-ts",
+    "version": "1.0.0",
+    "description": "A Discord bot template in TypeScript with slash & context commands, events, Bun, Express, Winston.",
+    "scripts": {
+        "dev": "bun run src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "deploy": "bun run src/deploy-commands.ts",
+        "clean": "rimraf dist"
+    },
+    "dependencies": {
+        "better-sqlite3": "^11.8.1",
+        "bufferutil": "^4.0.9",
+        "discord.js": "^14.17.3",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "knex": "^3.1.0",
+        "mongodb": "^6.12.0",
+        "sqlite3": "^5.1.7",
+        "winston": "^3.17.0",
+        "zlib-sync": "^0.1.9"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.10.10",
+        "discord-api-types": "^0.37.117",
+        "eslint": "^9.18.0",
+        "eslint-plugin-unused-imports": "^4.1.4",
+        "globals": "^15.14.0",
+        "rimraf": "^6.0.1",
+        "typescript": "^5.7.3",
+        "typescript-eslint": "^8.21.0"
+    }
+}
